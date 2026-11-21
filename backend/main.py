@@ -45,6 +45,20 @@ async def _repondre(intention: str, texte: str, ville: str | None) -> dict:
     return {"texte": await llm.repondre(texte)}
 
 
+@app.get("/")
+def accueil():
+    """Page d'accueil : petite carte de visite en wolof."""
+    return {
+        "platform": "Wolof Services 🇸🇳",
+        "bienvenue": "Dalal ak jamm ! Bienvenue sur l'API des services du quotidien en wolof.",
+        "essai": {"marche": "prix du riz Dakar",
+                  "meteo": "meteo Dakar",
+                  "sante": "pharmacie de garde Dakar"},
+        "swagger": "/docs",
+        "sante": "/health",
+    }
+
+
 @app.get("/health")
 def health():
     """Vérifie ce qui est disponible sur ce serveur."""
