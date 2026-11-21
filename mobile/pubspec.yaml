@@ -1,0 +1,23 @@
+name: wolof_services
+description: "Wolof Services — services du quotidien en wolof (Sénégal)"
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0          # appels à l'API backend
+  record: ^5.0.0        # enregistrer la voix (micro)
+  just_audio: ^0.9.36   # lire la réponse vocale
+  permission_handler: ^11.3.0  # demander l'autorisation du micro
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

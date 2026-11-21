@@ -1,0 +1,10 @@
+# --- Indispensable ---
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9     # pour recevoir des fichiers audio
+httpx>=0.27                 # appels vers les APIs gratuites (météo, OSM)
+pydantic>=2.6
+
+# --- Voix : à installer quand vous voulez activer la parole ---
+# faster-whisper>=1.0       # STT : voix -> texte (télécharge le modèle au 1er lancement)
+# piper-tts>=1.2            # TTS : texte -> voix

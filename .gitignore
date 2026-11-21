@@ -1,0 +1,42 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# --- Environnement virtuel ---
+venv/
+.venv/
+env/
+
+# --- Modèles IA volumineux (téléchargés à la demande) ---
+models/
+*.onnx
+*.bin
+*.pt
+*.pth
+
+# --- Données d'entraînement volumineuses ---
+*.wav
+*.mp3
+*.webm
+*.m4a
+
+# --- Sécrets / configuration locale ---
+.env
+.env.*
+*.key
+
+# --- Éditeurs / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Flutter / Dart ---
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/pubspec.lock
