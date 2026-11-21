@@ -22,6 +22,21 @@ des langues locales).
 
 ---
 
+## 🌍 En ligne (gratuit)
+
+| | |
+|---|---|
+| **API publique** | https://wolof-services.onrender.com |
+| **Swagger (à tester)** | https://wolof-services.onrender.com/docs |
+| **Hébergement** | Render.com — plan Free, 0 € |
+| **Déploiement** | automatique à chaque `git push` sur `main` |
+
+> ⚠️ Le plan gratuit **dort après 15 min d'inactivité** : le premier appel
+> après une période de repos met ~50 s à répondre (un message « waking up »).
+> Les appels suivants sont instantanés.
+
+---
+
 ## ✅ Fonctionnel et testé en direct
 
 | Service | Source | État |
@@ -148,13 +163,26 @@ flutter run             # sur l'émulateur ou le téléphone connecté
 > `static const String baseUrl = 'http://192.168.x.x:8000';` (`ipconfig` → Adresse IPv4).
 > Émulateur : `http://10.0.2.2:8000` (valeur déjà mise par défaut).
 
-### Étape 4 — Mettre en ligne (gratuit)
+### Étape 4 — Mettre en ligne (gratuit) ✅ fait
 
-| Service | Pour | Free tier |
-|---|---|---|
-| **Hugging Face Spaces** | Démo publique du backend | illimité (CPU) |
-| **Render.com** | Backend Python | 750 h/mois |
-| **Vercel / Netlify** | Site web | illimité |
+**Déployé sur Render.com** — le service se reconstruit tout seul à chaque
+`git push` sur `main` :
+
+1. https://render.com → **Sign up with GitHub**
+2. **New → Web Service** → choisir le dépôt `DIALLO-INFORMAT/wolof-services`
+3. Runtime **Docker** (détecté automatiquement via le `Dockerfile` racine)
+4. Plan **Free ($0)** → **Deploy web service**
+
+| Service | Pour | Free tier | Retour d'expérience |
+|---|---|---|---|
+| **Render.com** ✅ | Backend Python | 750 h/mois | **utilisé** — veille après 15 min |
+| Hugging Face Spaces | Démo publique | Static seulement | ❌ Docker/Gradio = abonnement PRO $9/mois (2026) |
+| Vercel / Netlify | Site web | illimité | frontend uniquement |
+
+> **Note HF** : depuis 2026, Hugging Face facture l'exécution de code
+> (Spaces Docker/Gradio). Seuls les *Static Spaces* restent gratuits, et ils
+> ne peuvent pas faire tourner Python. L'exception ZeroGPU gratuite exige un
+> compte de plus de 30 jours.
 
 ---
 
@@ -210,6 +238,7 @@ Réponses de base en wolof :
 - [x] Détection d'intention wolof/français + gestion des accents
 - [x] 11 tests unitaires verts
 - [x] Swagger UI sur http://127.0.0.1:8000/docs
+- [x] Déploiement en ligne gratuit (Render.com) — testé publiquement
 - [ ] Collecte de voix en wolof (Mozilla Common Voice, enregistrements maison)
 - [ ] Fine-tuning de Whisper sur le wolof
 - [ ] Enregistrer une vraie voix wolof pour Piper
