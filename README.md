@@ -1,3 +1,13 @@
+---
+title: Wolof Services
+emoji: 🇸🇳
+colorFrom: green
+colorTo: yellow
+sdk: docker
+pinned: false
+license: mit
+---
+
 # 🇸🇳 Wolof Services
 
 Plateforme de **services du quotidien en wolof** pour le Sénégal — adaptée du
